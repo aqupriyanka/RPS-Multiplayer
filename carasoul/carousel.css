@@ -1,0 +1,96 @@
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #468;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#game,#results{
+
+  display: none;
+}
+.resultDiv{
+  border:1px solid black; width:105px; height: 145px;z-index: 2;
+  /*padding: 30px;*/
+}
+.image{
+  width: 100px;
+  height:140px;
+  /*padding: 20px;*/
+}
+#gameWin,#gameLoose{
+  display: none;
+}
+#status-bar {
+    background: #FE1A00;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 190px;
+    z-index: 5000;
+    padding: 15px;
+    border-radius: 5px;
+    color: black;
+    opacity: .8;
+    text-align: center;
+    display: none;
+    /*font-family: jaf-facitweb;*/
+}
+.resultClass{
+  float:left;
+  /*text-align: center;*/
+  /*margin: auto;*/
+  /*margin-left: 50%;
+  margin-right: 50%;*/
+
+}
+.player1Result{
+  position: absolute;
+  left : 300px;
+}
+.vsResult{
+  position: absolute;
+  right : 50%;
+}
+.player2Result{
+  position: absolute;
+  right : 350px;
+}
+.results{
+  position: relative;
+}
+.displayRight{
+  float:right;
+}

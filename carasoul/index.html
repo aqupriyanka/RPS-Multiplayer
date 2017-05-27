@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Carousel Template for Bootstrap</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+
+   
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
+
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+   
+   <div class="modal fade bs-example-modal-sm" id="myPleaseWait" tabindex="-1"
+    role="dialog" aria-hidden="true" data-backdrop="transparent">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span class="glyphicon glyphicon-time">
+                    </span>Please Wait
+                 </h4>
+            </div>
+            <div class="modal-body">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info
+                    progress-bar-striped active"
+                    style="width: 100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog" aria-hidden="true">
+    <div id="myModalBox" class="modal-dialog modal-sm">
+          <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-body">
+                <p>Only 1 user Logged In.</p>
+                <p>Waiting for Another User To Join</p>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+          
+    </div>
+  </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel" >
+      <div class="carousel-inner" >
+        <div class="item active">
+          <!-- <img class="first-slide" src="../img/header.jpg" alt="First slide">  -->
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>ROCK PAPER AND SCISSORS</h1>
+              <p>INVITE A FRIEND TO PLAY AGAINST YOU!!</p>
+              <h2 id="userLoginText"></h2>
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
+              <br><br>
+              <div class="resultClass" id="gameWin"> 
+              <h4>WINS :</h4><span id="wins" class="badge">0</span>
+              </div>
+              <div class="displayRight" id="gameLoose"> 
+              <h4>LOOSES :</h4><span id="looses" class="badge">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+      </div>
+     
+    </div><!-- /.carousel -->
+
+    
+    <div class="container" id="signIn">
+
+      <h2 class="form-signin-heading text-center">Please Enter your Name</h2>
+      <form class="form-signin">
+        
+        <input type="text" id="name" class="form-control"  required autofocus>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing" id="game">
+
+      <!-- Three columns of text below the carousel -->
+      <h2 class="text-center">Please Choose your option</h2>
+      <div class="row">
+        <div class="col-lg-4">
+          <a href="#" id="rock" value="rock">
+            <img class="img-circle" src="../img/rock.jpg" alt="Generic placeholder image" width="140" height="140" >
+          </a>
+          <h2>ROCK</h2>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <a href="#" id="paper" value="paper">
+            <img class="img-circle" src="../img/paper.png" alt="Generic placeholder image" width="140" height="140">
+           </a>
+          <h2>PAPER</h2>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <a href="#" id="scissors" value="scissors">
+            <img class="img-circle" src="../img/scissors.png" alt="Generic placeholder image" width="140" height="140">
+          </a>
+          <h2>SCISSOR</h2>
+         
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+</div><!-- /.container -->
+  
+    <div class="container text-center" id="results" class="results">
+        
+        <div>
+          <h1 id="gameResult"></h1>
+          <button class="btn btn-primary" id="playAgain">Play Again</button>
+        </div>
+
+        <div class="resultClass player1Result">
+        <h2 id=player1Name></h2>
+        <div id="player1Div" class="resultDiv">
+          
+        </div>
+        </div>
+
+          <h1 class="resultClass vsResult">VS</h1>
+
+        <div  class="resultClass player2Result">
+        <h2 id=player2Name></h2>
+        <div id="player2Div" class="resultDiv">
+        </div>
+        </div>
+        
+        
+      </div>
+
+        <div id="status-bar">
+        <div id="messageDiv">Chat APP<br/></div>
+        <label id="nameInput"></label>
+        <!-- ?<input id="nameInput" type="text" placeholder="Name"/> -->
+        <input id="messageInput" type="text" placeholder="Message..."/>
+        </div>
+
+
+<script>
+        
+
+</script>
+
+  
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script type="text/javascript">
+      var config1 = {
+        apiKey: "AIzaSyCxybKR0fb6JsBNoq9W4h_7HX9IJe9WATg",
+        authDomain: "testproject-1644a.firebaseapp.com",
+        databaseURL: "https://testproject-1644a.firebaseio.com",
+        projectId: "testproject-1644a",
+        storageBucket: "testproject-1644a.appspot.com",
+        messagingSenderId: "1028498889615"
+      };
+      firebase.initializeApp(config1);
+
+    var database1 = firebase.database();
+    </script>
+    <script type="text/javascript" src="db1.js"></script>
+    
+  </body>
+</html>
